@@ -1,7 +1,17 @@
 import React from "react";
-
-const Button = () => {
-  return <div></div>;
+import "./Button.css";
+const Button = (props) => {
+  return (
+    <div>
+      <button
+        className={props.className}
+        style={{ width: props.width }}
+        type={props.type}
+      >
+        {props.children}
+      </button>
+    </div>
+  );
 };
 
 export default Button;

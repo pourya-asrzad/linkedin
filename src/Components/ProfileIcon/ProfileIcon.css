@@ -1,0 +1,14 @@
+.ProfileIcon{
+    
+        position: absolute;
+        top: -37px;
+        left: 174px;
+        width: 87px;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 87px;
+        border-radius: 45px;
+    
+}
