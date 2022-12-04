@@ -1,0 +1,16 @@
+.loginform{
+    background-color: white;
+    padding: 60px 68px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.buttonContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+.inputkabelcontainer{
+    margin-top: 1rem;
+}
