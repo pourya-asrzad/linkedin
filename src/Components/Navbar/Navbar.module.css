@@ -1,0 +1,21 @@
+.Navbar{
+  background-color: #040815c7;
+  width: 15rem;
+  height: 100%;
+  position: fixed;
+}
+.Navbarheader h1{
+  font-size: 26px;
+  color: whitesmoke;
+  border-bottom: 1px solid;
+}
+.Navbarheader{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 29px 0;
+}
+.links{
+margin-left: 2rem;
+}

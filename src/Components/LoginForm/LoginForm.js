@@ -6,7 +6,7 @@ import ProfileIcon from "../ProfileIcon/ProfileIcon";
 const LoginForm = () => {
   return (
     <div className={Styles.loginform}>
-      <ProfileIcon />
+      <ProfileIcon height="60" className="ProfileIcon" />
       <form>
         <div className={Styles.inputkabelcontainer}>
           <label htmlFor="name">

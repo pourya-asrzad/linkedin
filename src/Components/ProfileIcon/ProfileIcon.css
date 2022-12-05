@@ -12,3 +12,12 @@
         border-radius: 45px;
     
 }
+.ProfileIconNavbar{
+        width: 70px;
+    height: 72px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 37px;
+}

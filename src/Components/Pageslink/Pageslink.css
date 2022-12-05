@@ -1,0 +1,11 @@
+.PagesLink{
+    display: flex;
+    color: white;
+    align-items: center;
+    width: 5.5rem;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+.PagesLink span{
+    font-size: 18px;
+}
