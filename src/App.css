@@ -1,3 +1,55 @@
 .point{
     color: red;
 }
+.MainsHeader{
+    width: 100%;
+    border-bottom: 3px solid;
+    border-top: 3px solid;
+    position: fixed;
+}
+.MainProfile{
+    margin-left: 240px;
+}
+.MainsHeader img{
+    height: 2.5rem;
+    margin: 5px 10px;
+}
+.Profile-pic-div{
+    margin-top: 5rem;
+}
+input[type="file"] { 
+    z-index: -1;
+    position: absolute;
+    opacity: 0;
+  }
+  
+  input:focus + label {
+    outline: 2px solid;
+  }
+  .filechooser img{
+    position: absolute;
+    bottom: -1px;
+    right: -2px;
+  }
+ .MainProfile-sc2{
+    margin-left: 42px;
+ } 
+ .Profile-picture{
+    position: absolute;
+    left: 43%;
+    bottom: -78px;
+ }
+ .Profile-pic-div{
+    position: relative;
+ }
+ .profileimg{
+    overflow: hidden;
+    width: 124px;
+    height: 124px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid blue;
+ }
