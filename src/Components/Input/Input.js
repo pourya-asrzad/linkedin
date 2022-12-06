@@ -1,9 +1,15 @@
 import React from "react";
 import styles from "./Input.module.css";
-const Input = ({ type, id }) => {
+const Input = ({ type, id, height, width }) => {
   return (
     <div>
-      <input className={styles.input} id={id} name={id} type={type} />
+      <input
+        style={{ height: height, width: width }}
+        className={styles.input}
+        id={id}
+        name={id}
+        type={type}
+      />
     </div>
   );
 };

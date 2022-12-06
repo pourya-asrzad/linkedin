@@ -8,7 +8,7 @@ const ProfileAdder = () => {
     <div className="Profile-picture">
       <div className="profileimg">
         <img
-          width={120}
+          width={127}
           src={selectedFile ? `images/${selectedFile.name}` : ""}
         />
       </div>

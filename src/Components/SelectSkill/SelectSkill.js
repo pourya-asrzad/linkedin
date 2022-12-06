@@ -14,22 +14,30 @@ const MenuProps = {
   PaperProps: {
     style: {
       maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
+      width: 400,
     },
   },
 };
 
 const names = [
-  "Oliver Hansen",
-  "Van Henry",
-  "April Tucker",
-  "Ralph Hubbard",
-  "Omar Alexander",
-  "Carlos Abbott",
-  "Miriam Wagner",
-  "Bradley Wilkerson",
-  "Virginia Andrews",
-  "Kelly Snyder",
+  "Javascript",
+  "UI design",
+  "UX design",
+  "C",
+  "REST API",
+  "Jango",
+  "Vue",
+  "photograph",
+  "Cow",
+  "C#",
+  "Figma",
+  "React.js",
+  "Css",
+  "HTML5",
+  "C++",
+  "Java",
+  "Python",
+  "linux",
 ];
 
 function getStyles(name, personName, theme) {
@@ -56,16 +64,16 @@ export default function MultipleSelectChip() {
   };
 
   return (
-    <div>
-      <FormControl sx={{ m: 1, width: 300 }}>
-        <InputLabel id="demo-multiple-chip-label">Chip</InputLabel>
+    <div className="addSkill">
+      <FormControl sx={{ m: 1, width: 400 }}>
+        <InputLabel id="demo-multiple-chip-label">Skill</InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
           id="demo-multiple-chip"
           multiple
           value={personName}
           onChange={handleChange}
-          input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+          input={<OutlinedInput id="select-multiple-chip" label="Skill" />}
           renderValue={(selected) => (
             <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
               {selected.map((value) => (

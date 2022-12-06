@@ -37,7 +37,7 @@ input[type="file"] {
  .Profile-picture{
     position: absolute;
     left: 43%;
-    bottom: -78px;
+    bottom: -59px;
  }
  .Profile-pic-div{
     position: relative;
@@ -53,3 +53,15 @@ input[type="file"] {
     border-radius: 50%;
     border: 2px solid blue;
  }
+.Profileforminput{
+  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3,7rem);
+    margin-top: 4rem;
+    justify-items: center;
+
+}
+.profilebtnposition{
+    margin-left: 33rem;
+}
