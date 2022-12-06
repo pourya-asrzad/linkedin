@@ -65,3 +65,19 @@ input[type="file"] {
 .profilebtnposition{
     margin-left: 33rem;
 }
+.Chartcontainer{
+    width: 10rem;
+    height: 10rem;
+    background-color: white;
+    padding: 2rem 6rem;
+}
+.chart-header{
+    background-color: #acb7b791;
+
+}
+.chart-header h2{
+    padding-top: .5rem;
+padding-bottom: .25rem;
+    margin: 0;
+    margin-left: 10px;
+}

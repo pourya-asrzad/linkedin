@@ -1,0 +1,9 @@
+.MainHome{
+    margin-left: 17rem;
+    margin-top: 1rem;
+}
+.MainHometop{
+    display: flex;
+    justify-content: space-around;
+    width: 73rem;
+}
