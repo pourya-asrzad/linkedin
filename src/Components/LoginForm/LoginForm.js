@@ -3,11 +3,14 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Styles from "./LoginForm.module.css";
 import ProfileIcon from "../ProfileIcon/ProfileIcon";
-const LoginForm = () => {
+const LoginForm = ({ changetoSignupPage }) => {
+  function loginSubmiHamdler(e) {
+    e.preventDefault();
+  }
   return (
     <div className={Styles.loginform}>
       <ProfileIcon height="60" className="ProfileIcon" />
-      <form>
+      <form onSubmit={loginSubmiHamdler}>
         <div className={Styles.inputkabelcontainer}>
           <label htmlFor="name">
             Username <span className="point"> *</span>
@@ -24,7 +27,7 @@ const LoginForm = () => {
           <Button className="signinbtn" type="submit">
             Sign in
           </Button>
-          <Button className="signupbtn" type="submit">
+          <Button className="signupbtn" handelpagechange={changetoSignupPage}>
             Sign up
           </Button>
         </div>

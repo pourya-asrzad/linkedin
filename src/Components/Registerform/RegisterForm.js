@@ -3,11 +3,14 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Styles from "./RegisterForm.module.css";
 import ProfileIcon from "../ProfileIcon/ProfileIcon";
-const RegisterForm = () => {
+const RegisterForm = ({ changetoSigninPage }) => {
+  function registerFormHandler(e) {
+    e.preventDefault();
+  }
   return (
     <div className={Styles.loginform}>
       <ProfileIcon height="60" className="ProfileIcon" />
-      <form>
+      <form onSubmit={registerFormHandler}>
         <div className={Styles.inputkabelcontainer}>
           <label htmlFor="name">
             Username <span className="point"> *</span>
@@ -30,8 +33,12 @@ const RegisterForm = () => {
           <Button className="signinbtn" type="submit">
             Submit
           </Button>
-          <Button className="signupbtn" type="submit">
-            Sign ip
+          <Button
+            className="signupbtn"
+            type="submit"
+            handelpagechange={changetoSigninPage}
+          >
+            Sign in
           </Button>
         </div>
       </form>

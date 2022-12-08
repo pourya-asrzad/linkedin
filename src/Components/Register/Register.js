@@ -1,10 +1,10 @@
 import React from "react";
 import RegisterForm from "../Registerform/RegisterForm";
 import Styles from "./Register.module.css";
-const Register = () => {
+const Register = ({ changetoSigninPage }) => {
   return (
     <div className={Styles.Register}>
-      <RegisterForm />
+      <RegisterForm changetoSigninPage={changetoSigninPage} />
     </div>
   );
 };
