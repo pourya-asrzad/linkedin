@@ -4,7 +4,7 @@ const Button = (props) => {
   return (
     <div>
       <button
-        disabled={props.disabled}
+        disabled={props.className == "disablebtn" ? true : false}
         className={props.className}
         style={{ width: props.width }}
         type={props.type}

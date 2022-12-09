@@ -11,6 +11,12 @@ const userData = [
     id: 1,
   },
   {
+    firstName: "",
+    lastName: "",
+    PhoneNumber: "",
+    NationalCode: "",
+    BirthDay: "",
+    Skills: "",
     userName: "Parsa-asr",
     Password: "parsa1234",
     id: 2,

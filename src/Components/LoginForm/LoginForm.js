@@ -4,7 +4,13 @@ import Button from "../Button/Button";
 import Styles from "./LoginForm.module.css";
 import ProfileIcon from "../ProfileIcon/ProfileIcon";
 import userData from "../../user-data/data";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Routes,
+  json,
+} from "react-router-dom";
 const LoginForm = ({}) => {
   const [userName, setuserName] = useState("");
   const [password, setPassword] = useState("");
@@ -12,14 +18,23 @@ const LoginForm = ({}) => {
   const [btnDisable, setbtnDisable] = useState(false);
   const [passwordIsvalid, setpasswordIsvalid] = useState("");
   const [usernameIsvalid, setusernameIsvalid] = useState("");
+  const [novaliduser, setnovaliduser] = useState(" ");
+  localStorage.userData = JSON.stringify(userData);
+  const data = localStorage.userData
+    ? JSON.parse(localStorage.userData)
+    : [...userData];
   function loginSubmiHamdler(e) {
     e.preventDefault();
 
-    userData.forEach((element) => {
+    data.forEach((element) => {
       if (userName === element.userName && password === element.Password) {
         localStorage.usename = JSON.stringify(element.userName);
         localStorage.location = "Profile";
         setIsValid(true);
+      } else {
+        localStorage.location == "Profile"
+          ? setnovaliduser(true)
+          : setnovaliduser(false);
       }
     });
   }
@@ -102,6 +117,11 @@ const LoginForm = ({}) => {
           </Link>
         </div>
       </form>
+      {novaliduser === false && (
+        <div className="signfirst">
+          <span className="validationmassega"> You should Sign up First</span>
+        </div>
+      )}
     </div>
   );
 };
