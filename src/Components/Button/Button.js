@@ -4,6 +4,7 @@ const Button = (props) => {
   return (
     <div>
       <button
+        disabled={props.disabled}
         className={props.className}
         style={{ width: props.width }}
         type={props.type}

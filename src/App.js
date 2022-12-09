@@ -6,10 +6,6 @@ import Register from "./Components/Register/Register";
 import Profile from "./Components/Profile/Profile";
 import Home from "./Components/Home/Home";
 function App() {
-  const [changePageToHome, setchangePageToHome] = useState(
-    localStorage.uername
-  );
-
   return (
     <Router>
       <Routes>

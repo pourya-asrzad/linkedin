@@ -21,3 +21,14 @@ cursor: pointer;
 .signupbtn:hover{
     background-color: rgba(128, 128, 128, 0.406);
 }
+.disablebtn{
+    width: 9rem;
+   height: 2.3rem;
+   background:#818291;
+ 
+   color: white;
+   border: 0;
+   border-radius: 5px;
+   font-size: 14px;
+   cursor: no-drop;
+   }

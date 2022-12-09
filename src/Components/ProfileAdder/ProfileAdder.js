@@ -7,9 +7,7 @@ const ProfileAdder = () => {
   if (selectedFile) {
     localStorage.image = JSON.stringify(selectedFile.name);
   }
-  // if (localStorage.image) {
-  //   setselectedFile(JSON.parse(localStorage.image));
-  // }
+
   let imageSrc = null;
   if (selectedFile) {
     imageSrc = `images/${selectedFile.name}`;

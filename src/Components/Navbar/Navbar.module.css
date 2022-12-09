@@ -19,3 +19,12 @@
 .links{
 margin-left: 2rem;
 }
+.profilecontainer{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  overflow: hidden;
+  justify-content: center;
+  border-radius: 52px;
+  align-items: center;
+}
