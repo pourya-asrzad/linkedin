@@ -3,6 +3,7 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Styles from "./RegisterForm.module.css";
 import ProfileIcon from "../ProfileIcon/ProfileIcon";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 const RegisterForm = ({ changetoSigninPage }) => {
   function registerFormHandler(e) {
     e.preventDefault();
@@ -33,13 +34,15 @@ const RegisterForm = ({ changetoSigninPage }) => {
           <Button className="signinbtn" type="submit">
             Submit
           </Button>
-          <Button
-            className="signupbtn"
-            type="submit"
-            handelpagechange={changetoSigninPage}
-          >
-            Sign in
-          </Button>
+          <Link to="/">
+            <Button
+              className="signupbtn"
+              type="submit"
+              handelpagechange={changetoSigninPage}
+            >
+              Sign in
+            </Button>
+          </Link>
         </div>
       </form>
     </div>

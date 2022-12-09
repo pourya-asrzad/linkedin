@@ -1,11 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Styles from "./LoginForm.module.css";
 import ProfileIcon from "../ProfileIcon/ProfileIcon";
-const LoginForm = ({ changetoSignupPage }) => {
+import userData from "../../user-data/data";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+const LoginForm = ({}) => {
+  const [userName, setuserName] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [isValid, setIsValid] = useState(false);
   function loginSubmiHamdler(e) {
     e.preventDefault();
+    userData.forEach((element) => {
+      if (userName === element.userName && password === element.Password) {
+        localStorage.usename = JSON.stringify(element.userName);
+        localStorage.location = "Profile";
+        setIsValid(true);
+      }
+    });
+  }
+  function usenameonChange(userNamevalue) {
+    setuserName(userNamevalue);
+  }
+  function passwordonChange(passwordValue) {
+    setPassword(passwordValue);
   }
   return (
     <div className={Styles.loginform}>
@@ -15,21 +33,34 @@ const LoginForm = ({ changetoSignupPage }) => {
           <label htmlFor="name">
             Username <span className="point"> *</span>
           </label>
-          <Input type="text" id="name"></Input>
+          <Input onChange={usenameonChange} type="text" id="name"></Input>
         </div>
         <div className={Styles.inputkabelcontainer}>
           <label htmlFor="password">
             Password<span className="point"> *</span>
           </label>
-          <Input type="password" id="password"></Input>
+          <Input
+            onChange={passwordonChange}
+            type="password"
+            id="password"
+          ></Input>
         </div>
         <div className={Styles.buttonContainer}>
-          <Button className="signinbtn" type="submit">
-            Sign in
-          </Button>
-          <Button className="signupbtn" handelpagechange={changetoSignupPage}>
-            Sign up
-          </Button>
+          {localStorage.location == "Profile" ? (
+            <Link to="/Profile">
+              <Button isvalid={isValid} className="signinbtn" type="submit">
+                Sign in
+              </Button>
+            </Link>
+          ) : (
+            <Button isvalid={isValid} className="signinbtn" type="submit">
+              Sign in
+            </Button>
+          )}
+
+          <Link to="/Register">
+            <Button className="signupbtn">Sign up</Button>
+          </Link>
         </div>
       </form>
     </div>
