@@ -1,3 +1,4 @@
+import { useState } from "react";
 import * as React from "react";
 import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -49,7 +50,7 @@ function getStyles(name, personName, theme) {
   };
 }
 
-export default function MultipleSelectChip() {
+export default function MultipleSelectChip({ ongetSkill }) {
   const theme = useTheme();
   const [personName, setPersonName] = React.useState([]);
 
@@ -57,6 +58,7 @@ export default function MultipleSelectChip() {
     const {
       target: { value },
     } = event;
+    ongetSkill(value);
     setPersonName(
       // On autofill we get a stringified value.
       typeof value === "string" ? value.split(",") : value

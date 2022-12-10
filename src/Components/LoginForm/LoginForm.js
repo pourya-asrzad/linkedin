@@ -19,7 +19,6 @@ const LoginForm = ({}) => {
   const [passwordIsvalid, setpasswordIsvalid] = useState("");
   const [usernameIsvalid, setusernameIsvalid] = useState("");
   const [novaliduser, setnovaliduser] = useState(" ");
-  localStorage.userData = JSON.stringify(userData);
   const data = localStorage.userData
     ? JSON.parse(localStorage.userData)
     : [...userData];
@@ -31,11 +30,10 @@ const LoginForm = ({}) => {
         localStorage.usename = JSON.stringify(element.userName);
         localStorage.location = "Profile";
         setIsValid(true);
-      } else {
-        localStorage.location == "Profile"
-          ? setnovaliduser(true)
-          : setnovaliduser(false);
       }
+      localStorage.location == "Profile"
+        ? setnovaliduser(true)
+        : setnovaliduser(false);
     });
   }
   useEffect(() => {

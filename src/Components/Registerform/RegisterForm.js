@@ -4,7 +4,13 @@ import Button from "../Button/Button";
 import Styles from "./RegisterForm.module.css";
 import ProfileIcon from "../ProfileIcon/ProfileIcon";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Link,
+  Routes,
+  json,
+} from "react-router-dom";
 const RegisterForm = ({ changetoSigninPage }) => {
   const [passwordIsvalid, setpasswordIsvalid] = useState("");
   const [usernameIsvalid, setusernameIsvalid] = useState("");
@@ -14,7 +20,7 @@ const RegisterForm = ({ changetoSigninPage }) => {
   const [confrimIsvalid, setconfrimIsvalid] = useState("");
   const [isValid, setIsValid] = useState(false);
   const [btnDisable, setbtnDisable] = useState(false);
-  const data = localStorage.userData;
+  const data = JSON.parse(localStorage.userData);
   // console.log(data);
   useEffect(() => {
     const signinValidation = setTimeout(() => {
@@ -39,6 +45,21 @@ const RegisterForm = ({ changetoSigninPage }) => {
   }, [password, userName, cnfpassword]);
   function registerFormHandler(e) {
     e.preventDefault();
+    data.push({
+      firstName: "",
+      lastName: "",
+      PhoneNumber: "",
+      NationalCode: "",
+      BirthDay: "",
+      Skills: "",
+      userName: userName,
+      Password: password,
+      id: data.length,
+    });
+    localStorage.userData = JSON.stringify(data);
+    localStorage.usename = JSON.stringify(userName);
+    localStorage.location = "Profile";
+    setIsValid(true);
     console.log("Sorm submited !");
   }
   function usenameonChange(userNamevalue) {

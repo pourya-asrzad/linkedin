@@ -17,7 +17,7 @@ const Input = ({
     setIsValid(e.target.value.trim().length > 3);
   }
   function usernameValidationHandler(e) {
-    setIsValid(e.target.value.trim().length > 6);
+    setIsValid(e.target.value.trim().length > 6 && isNaN(e.target.value));
   }
   // { height: height, width: width, border: "1px solid red" }
   return (
