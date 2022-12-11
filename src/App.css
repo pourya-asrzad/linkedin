@@ -96,4 +96,66 @@ display: flex;
 }
 .main-item{
     margin-left: 15rem;
+    padding-right: 16px;
+
+background-color: rgb(242, 238, 238);
 }
+.itemformcontainer{
+    padding-bottom: 27px;
+
+padding-top: 4rem;
+}
+.itemforminput{
+    width: 20rem;
+    height: 2rem;
+    font-size: 1.2rem;
+    /* border: none; */
+    border-radius: 8px;
+    border: none;
+    margin-top: 5px;
+}
+.itemform {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 79.9rem;
+    row-gap: 17px;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: end;
+}
+.searchbtn{
+    width: 20rem;
+    font-size: 1.2rem;
+    height: 2rem; 
+    background-color: rgb(0, 17, 255);  
+    border: 0;
+    border-radius: 10px;
+    color: aliceblue;
+}
+table, th, td {  
+    border-collapse: collapse;  
+}  
+td{
+
+      border-bottom: 1px solid black;  
+
+  }
+  th, td {  
+    padding: 14px 47px;  
+  }  
+tr:nth-child(even) {  
+    background-color:#fff  !important  
+  }  
+ tr:nth-child(odd) {  
+    background-color: #eee !important
+  }  
+  table#alter th {  
+    color: white;  
+    background-color: gray;  
+  } 
+.tabelcomeshere{
+    display: flex;
+    justify-content: center;
+    overflow: overlay;
+    height: 25rem;
+}  

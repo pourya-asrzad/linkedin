@@ -4,7 +4,9 @@ import Navbar from "../Navbar/Navbar";
 const Items = () => {
   return (
     <div className="items-page">
-      <Navbar></Navbar>
+      <div>
+        <Navbar></Navbar>
+      </div>
       <div className="main-item">
         <MainItem />
       </div>
