@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect, useState } from "react";
+import React, { useReducer, useEffect, useState, useCallback } from "react";
 import MainsHeader from "../MainsHeader/MainsHeader";
 import ProfileAdder from "../ProfileAdder/ProfileAdder";
 import MultipleSelectChip from "../SelectSkill/SelectSkill";
@@ -34,7 +34,6 @@ function nationalCodereducer(state, action) {
 const MainProfile = () => {
   const [skill, setSkill] = useState(null);
   const [btnDisable, setbtnDisable] = useState(false);
-  const [isValid, setIsValid] = useState(false);
   const [firstName, dipatchFirstName] = useReducer(firstNamereducer, {
     isValid: "",
     firstName: "",
@@ -112,17 +111,22 @@ const MainProfile = () => {
   function ongetSkill(value) {
     setSkill(value);
   }
-  function ProfileSbmitHandler(e) {
+
+  const ProfileSbmitHandler = (e) => {
+    e.preventDefault();
+
     const userInformation = {
       firstName: firstName.firstName,
       lastName: lastName.lastName,
       PhoneNumber: PhoneNumber.PhoneNumber,
       nationalCode: nationalCode.nationalCode,
       birthday: birthday.target.value,
+      skills: skill,
     };
 
     localStorage.userInformation = JSON.stringify(userInformation);
-  }
+    alert("Submited!");
+  };
   return (
     <div className="MainProfile">
       <MainsHeader />
@@ -215,19 +219,7 @@ const MainProfile = () => {
               className={!btnDisable ? "disablebtn" : "signinbtn"}
               type="submit"
             >
-              {localStorage.userInformation ? (
-                <span
-                  style={{
-                    color: "#04da4d",
-                    fontSize: "initial",
-                    fontWeight: 800,
-                  }}
-                >
-                  submited✔{" "}
-                </span>
-              ) : (
-                "Submit"
-              )}
+              Submit
             </Button>
           </div>
         </form>

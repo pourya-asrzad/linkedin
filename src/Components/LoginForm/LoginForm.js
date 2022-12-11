@@ -19,6 +19,10 @@ const LoginForm = ({}) => {
   const [passwordIsvalid, setpasswordIsvalid] = useState("");
   const [usernameIsvalid, setusernameIsvalid] = useState("");
   const [novaliduser, setnovaliduser] = useState(" ");
+  if (!localStorage.userData) {
+    localStorage.userData = JSON.stringify(userData);
+  }
+
   const data = localStorage.userData
     ? JSON.parse(localStorage.userData)
     : [...userData];
@@ -28,6 +32,7 @@ const LoginForm = ({}) => {
     data.forEach((element) => {
       if (userName === element.userName && password === element.Password) {
         localStorage.usename = JSON.stringify(element.userName);
+        localStorage.id = JSON.stringify(element.id);
         localStorage.location = "Profile";
         setIsValid(true);
       }

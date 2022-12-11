@@ -91,3 +91,9 @@ padding-bottom: .25rem;
     align-items: center;
     justify-content: center;
 }
+.items-page{
+display: flex;
+}
+.main-item{
+    margin-left: 15rem;
+}

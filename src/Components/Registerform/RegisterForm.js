@@ -21,7 +21,6 @@ const RegisterForm = ({ changetoSigninPage }) => {
   const [isValid, setIsValid] = useState(false);
   const [btnDisable, setbtnDisable] = useState(false);
   const data = JSON.parse(localStorage.userData);
-  // console.log(data);
   useEffect(() => {
     const signinValidation = setTimeout(() => {
       if (
@@ -47,6 +46,7 @@ const RegisterForm = ({ changetoSigninPage }) => {
     e.preventDefault();
     data.push({
       firstName: "",
+      profileimage: "",
       lastName: "",
       PhoneNumber: "",
       NationalCode: "",
@@ -54,11 +54,12 @@ const RegisterForm = ({ changetoSigninPage }) => {
       Skills: "",
       userName: userName,
       Password: password,
-      id: data.length,
+      id: data.length + 1,
     });
     localStorage.userData = JSON.stringify(data);
     localStorage.usename = JSON.stringify(userName);
     localStorage.location = "Profile";
+    localStorage.id = data.length;
     setIsValid(true);
     console.log("Sorm submited !");
   }
