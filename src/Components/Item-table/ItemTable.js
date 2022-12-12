@@ -2,6 +2,7 @@ import React from "react";
 import TabelTr from "../tabel-tr/TabelTr";
 
 const ItemTable = ({ data }) => {
+  console.log(data);
   return (
     <div>
       <table>
@@ -18,21 +19,25 @@ const ItemTable = ({ data }) => {
           </tr>
         </thead>
         <tbody>
-          {data.map((element) => {
-            return (
-              <TabelTr
-                name={element.name}
-                Account={element.account}
-                Category={element.category}
-                fromdate={element.fromDate}
-                todate={element.toDate}
-                fromFax={element.fromFax}
-                tofax={element.ToFax}
-                Fax={element.Fax}
-                key={element.id}
-              />
-            );
-          })}
+          {data.length > 0 ? (
+            data.map((element) => {
+              return (
+                <TabelTr
+                  name={element.name}
+                  Account={element.account}
+                  Category={element.category}
+                  fromdate={element.fromDate}
+                  todate={element.toDate}
+                  fromFax={element.fromFax}
+                  tofax={element.ToFax}
+                  Fax={element.Fax}
+                  key={element.id}
+                />
+              );
+            })
+          ) : (
+            <h1 className="notfounditem">Item not found</h1>
+          )}
         </tbody>
       </table>
     </div>

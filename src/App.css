@@ -159,3 +159,7 @@ tr:nth-child(even) {
     overflow: overlay;
     height: 25rem;
 }  
+.notfounditem{
+    margin-left: 28%;
+    position: absolute;
+}
