@@ -2,15 +2,85 @@ import React, { useReducer } from "react";
 import ItemFotmInputLabel from "./ItemFotmInputLabel";
 // import itemData from "../../item-data/ItemData";
 function itemfilterReducer(state, action) {
-  return {
-    name: action.name,
-    account: action.account,
-    category: action.category,
-    fromDate: action.fromDate,
-    toDate: action.toDate,
-    fromFax: action.fromFax,
-    toFax: action.toFax,
-  };
+  switch (action.type) {
+    case "name": {
+      return {
+        name: action.name,
+        account: state.account,
+        category: state.category,
+        fromDate: state.fromDate,
+        toDate: state.toDate,
+        fromFax: state.fromFax,
+        Fax: state.Fax,
+      };
+    }
+    case "account": {
+      return {
+        name: state.name,
+        account: action.account,
+        category: state.category,
+        fromDate: state.fromDate,
+        toDate: state.toDate,
+        fromFax: state.fromFax,
+        Fax: state.Fax,
+      };
+    }
+    case "category": {
+      return {
+        name: state.name,
+        account: state.account,
+        category: action.category,
+        fromDate: state.fromDate,
+        toDate: state.toDate,
+        fromFax: state.fromFax,
+        Fax: state.Fax,
+      };
+    }
+    case "fromDate": {
+      return {
+        name: state.name,
+        account: state.account,
+        category: state.category,
+        fromDate: action.fromDate,
+        toDate: state.toDate,
+        fromFax: state.fromFax,
+        Fax: state.Fax,
+      };
+    }
+    case "toDate": {
+      return {
+        name: state.name,
+        account: state.account,
+        category: state.category,
+        fromDate: state.fromDate,
+        toDate: action.toDate,
+        fromFax: state.fromFax,
+        Fax: state.Fax,
+      };
+    }
+    case "fromFax": {
+      return {
+        name: state.name,
+        account: state.account,
+        category: state.category,
+        fromDate: state.fromDate,
+        toDate: state.toDate,
+        fromFax: action.fromFax,
+        Fax: state.Fax,
+      };
+    }
+    case "fax": {
+      return {
+        name: state.name,
+        account: state.account,
+        category: state.category,
+        fromDate: state.fromDate,
+        toDate: state.toDate,
+        fromFax: state.fromFax,
+        Fax: action.Fax,
+      };
+    }
+  }
 }
 const ItemForm = ({ onGetItemFiltred }) => {
   const [itemfilter, dipatchItemfilter] = useReducer(itemfilterReducer, {
@@ -20,7 +90,7 @@ const ItemForm = ({ onGetItemFiltred }) => {
     fromDate: null,
     toDate: null,
     fromFax: null,
-    toFax: null,
+    Fax: null,
   });
   function searchFormSubmitHandler(e) {
     e.preventDefault();
@@ -29,82 +99,47 @@ const ItemForm = ({ onGetItemFiltred }) => {
 
   function nameGetValue(val) {
     dipatchItemfilter({
+      type: "name",
       name: val,
-      account: itemfilter.account,
-      category: itemfilter.category,
-      fromDate: itemfilter.fromDate,
-      toDate: itemfilter.toDate,
-      fromFax: itemfilter.fromFax,
-      toFax: itemfilter.toFax,
     });
   }
   function AccountGetValue(val) {
     dipatchItemfilter({
-      name: itemfilter.name,
+      type: "account",
       account: val,
-      category: itemfilter.category,
-      fromDate: itemfilter.fromDate,
-      toDate: itemfilter.toDate,
-      fromFax: itemfilter.fromFax,
-      toFax: itemfilter.toFax,
     });
   }
   function CategoryGetValue(val) {
     dipatchItemfilter({
-      name: itemfilter.name,
-      account: itemfilter.account,
+      type: "category",
       category: val,
-      fromDate: itemfilter.fromDate,
-      toDate: itemfilter.toDate,
-      fromFax: itemfilter.fromFax,
-      toFax: itemfilter.toFax,
     });
   }
   function FromDateGetValue(val) {
     dipatchItemfilter({
-      name: itemfilter.name,
-      account: itemfilter.account,
-      category: itemfilter.category,
+      type: "fromDate",
       fromDate: val,
-      toDate: itemfilter.toDate,
-      fromFax: itemfilter.fromFax,
-      toFax: itemfilter.toFax,
     });
   }
   function TodateGetValue(val) {
     dipatchItemfilter({
-      name: itemfilter.name,
-      account: itemfilter.account,
-      category: itemfilter.category,
-      fromDate: itemfilter.fromDate,
+      type: "toDate",
       toDate: val,
-      fromFax: itemfilter.fromFax,
-      toFax: itemfilter.toFax,
     });
   }
   function FromFaxGetValue(val) {
     dipatchItemfilter({
-      name: itemfilter.name,
-      account: itemfilter.account,
-      category: itemfilter.category,
-      fromDate: itemfilter.fromDate,
-      toDate: itemfilter.toDate,
+      type: "fromFax",
       fromFax: val,
-      toFax: itemfilter.toFax,
     });
   }
-  function TofaxGetValue(val) {
+  function faxGetValue(val) {
     dipatchItemfilter({
-      name: itemfilter.name,
-      account: itemfilter.account,
-      category: itemfilter.category,
-      fromDate: itemfilter.fromDate,
-      toDate: itemfilter.toDate,
-      fromFax: itemfilter.fromFax,
-      toFax: val,
+      type: "fax",
+      Fax: val,
     });
   }
-
+  console.log(itemfilter);
   return (
     <div className="itemformcontainer">
       <form onSubmit={searchFormSubmitHandler} className="itemform">
@@ -126,8 +161,8 @@ const ItemForm = ({ onGetItemFiltred }) => {
         <ItemFotmInputLabel ongetvalue={FromFaxGetValue} name="From">
           From fax
         </ItemFotmInputLabel>
-        <ItemFotmInputLabel ongetvalue={TofaxGetValue} name="To">
-          To fax
+        <ItemFotmInputLabel ongetvalue={faxGetValue} name="To">
+          fax
         </ItemFotmInputLabel>
         <button className="searchbtn" type="submit">
           Search

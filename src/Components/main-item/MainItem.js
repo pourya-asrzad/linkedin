@@ -10,7 +10,6 @@ const MainItem = () => {
       return itemData.filter((element) => {
         return (
           element.Fax === itemfiltered.Fax ||
-          element.ToFax === itemfiltered.toFax ||
           element.fromFax === itemfiltered.fromFax ||
           element.toDate === itemfiltered.toDate ||
           element.fromDate === itemfiltered.fromDate ||
